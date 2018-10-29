@@ -1,0 +1,34 @@
+@import '../../assets/scss/main.scss';
+
+.nav {
+  background-color: color($color, 'black');
+
+  h1 {
+    color: color($color, 'main');
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .search {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    background-color: color($color, 'gray');
+  }
+
+  .search-input {
+    width: 85%;
+    height: 20px;
+    border: 0;
+    border-radius: 16px;
+    background-color: color($color, 'gray');
+    color: color($color, 'white');
+  }
+
+  .icon {
+    color: color($color, 'black');
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+}

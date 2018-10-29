@@ -1,0 +1,12 @@
+<section class="section content">
+  <div class="container">
+    <ul class="movie-list">
+      <li class="movie p-16" *ngFor="let movie of film$ | async">
+        <img src="../../assets/images/{{ movie.episode_id }}.jpg" alt="{{ movie.title }}">
+        <h1 class="movie-title">{{ movie.title }}</h1>
+        <h3 class="movie-date">{{ movie.release_date | date }}</h3>
+        <p>{{ movie.opening_crawl }}</p>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+@import '../../assets/scss/main.scss';
+
+.content {
+  background-color: color($color, 'black');
+
+  .movie-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .movie {
+      &:hover {
+        background-color: color($color, 'dark-gray');
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: transform .25s;
+      }
+
+      .movie-title {
+        color: color($color, 'main');
+        font-size: 24px;
+        margin: 5px 0;
+      }
+
+      .movie-date {
+        color: color($color, 'main');
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .movie-list {
+    column-count: 3;
+
+    .movie {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+}
