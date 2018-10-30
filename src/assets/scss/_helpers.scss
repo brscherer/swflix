@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .center-column {
@@ -33,7 +34,6 @@
 }
 
 .columns {
-  height: 100%;
   margin-left: 0;
 }
 

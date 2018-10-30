@@ -10,10 +10,13 @@ import { DataService } from '../data.service';
 export class NavComponent {
   public faSearch: any = faSearch;
 
-  constructor(private _data: DataService) { }
+  constructor(private service: DataService) { }
 
-  searchFilm(searchValue : string) {
-   this._data.searchFilm(searchValue);
+  search(name: string) {
+    if (name.length > 3)
+      this.service.search(name)
+    else if (name.length == 0)
+      this.service.getFilms();
   }
 
 }

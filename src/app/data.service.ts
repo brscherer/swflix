@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Film, Angular2SwapiService } from 'angular2-swapi';
+import { EventEmitter } from 'protractor';
 
 @Injectable()
 export class DataService {
 
-  private messageSource = new BehaviorSubject('default');
-  public currentMessage: Observable<string> = this.messageSource.asObservable();
+  private results: BehaviorSubject<Film[]> = new BehaviorSubject([]);
+  private results$: Observable<Film[]> = this.results.asObservable();
 
-  public film$: Observable<Film[]>;
-
-  constructor(private _swapi: Angular2SwapiService) { }
-
-  searchFilm(searchValue : string): Observable<Film[]> {
-    this.film$ = this._swapi.searchFilms(searchValue);
-    return this.film$;
+  constructor(private _swapi: Angular2SwapiService) {
+    this._swapi.getFilms().subscribe(response => this.results.next(response));
   }
 
-  getFilms(): Observable<Film[]>{
-    this.film$ = this._swapi.getFilms();
-    return this.film$;
+  public getResults$() {
+    return this.results$;
+  }
+
+  search(name: string) {
+    this._swapi.searchFilms(name).subscribe(response => this.results.next(response));
+  }
+
+  getFilms() {
+    this._swapi.getFilms().subscribe(response => this.results.next(response));
   }
 }

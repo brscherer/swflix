@@ -1,22 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from '../data.service';
 import { Film } from 'angular2-swapi';
 import { Observable } from 'rxjs';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
   public film$: Observable<Film[]>;
 
-  @Input('searchFilm') film: string;
-
-  constructor(private _data: DataService) { }
-
-  ngOnInit() {
-    this.film$ = this._data.getFilms();
+  constructor(private service: DataService) {
+    this.film$ = this.service.getResults$();
   }
+
 
 }
