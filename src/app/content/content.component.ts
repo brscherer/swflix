@@ -10,9 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class ContentComponent {
   public film$: Observable<Film[]>;
+  public searchQuery: string;
 
   constructor(private service: DataService) {
     this.film$ = this.service.getResults$();
+    //this.service.getSearchQuery$().subscribe(searchQuery => this.searchQuery = searchQuery);
   }
 
 

@@ -8,5 +8,9 @@
         <p>{{ movie.opening_crawl.substring(0, 100) }}... (Read more)</p>
       </li>
     </ul>
+    <div class="center-column" *ngIf="!film$.value && searchQuery">
+      <h2>Sorry, we can't find any results for "{{ searchQuery }}"</h2>
+      <img src="../../assets/images/porg.png" alt="Porg">
+    </div>
   </div>
 </section>
