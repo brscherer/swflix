@@ -18,7 +18,6 @@ export class NavComponent {
     }
     else if (name.length == 0) {
       this.service.updateSearchQuery('');
-      console.log(this.service.getSearchQuery$())
       this.service.getFilms();
     }
   }
