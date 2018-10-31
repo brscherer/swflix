@@ -3,12 +3,12 @@
 .content {
   background-color: color($color, 'black');
 
-  .movie-list {
+  .film-list {
     margin: 0;
     padding: 0;
     list-style: none;
 
-    .movie {
+    .film {
       max-width: 400px;
 
       &:hover {
@@ -18,26 +18,28 @@
         transition: transform .25s;
       }
 
-      .movie-title {
-        color: color($color, 'main');
-        font-size: 24px;
-        margin: 5px 0;
-      }
-
-      .movie-date {
+      .info {
         color: color($color, 'main');
         font-size: 16px;
         margin: 5px 0;
+
+        &--title {
+          font-size: 24px;
+        }
+
+        &--gray {
+          color: color($color, 'gray');
+        }
       }
     }
   }
 }
 
 @media screen and (min-width: 48em) {
-  .movie-list {
+  .film-list {
     column-count: 3;
 
-    .movie {
+    .film {
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;

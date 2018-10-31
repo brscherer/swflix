@@ -13,10 +13,14 @@ export class NavComponent {
   constructor(private service: DataService) { }
 
   search(name: string) {
-    if (name.length > 3)
+    if (name.length > 3) {
       this.service.search(name)
-    else if (name.length == 0)
+    }
+    else if (name.length == 0) {
+      this.service.updateSearchQuery('');
+      console.log(this.service.getSearchQuery$())
       this.service.getFilms();
+    }
   }
 
 }

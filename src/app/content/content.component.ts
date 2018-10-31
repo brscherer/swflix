@@ -11,11 +11,12 @@ import { Observable } from 'rxjs';
 export class ContentComponent {
   public film$: Observable<Film[]>;
   public searchQuery: string;
+  public isEmpty: boolean;
 
   constructor(private service: DataService) {
     this.film$ = this.service.getResults$();
-    //this.service.getSearchQuery$().subscribe(searchQuery => this.searchQuery = searchQuery);
+    this.service.getSearchQuery$().subscribe(searchQuery => this.searchQuery = searchQuery);
+    this.service.isEmpty$().subscribe(isEmpty => this.isEmpty = isEmpty);
   }
-
 
 }

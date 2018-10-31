@@ -3,10 +3,16 @@
 .nav {
   background-color: color($color, 'black');
 
-  h1 {
+  .logo {
+    cursor: pointer;
+    outline: none;
     color: color($color, 'main');
     font-size: 24px;
     font-weight: bold;
+
+    &:hover {
+      color: color($color, 'main-darker');
+    }
   }
 
   .search {

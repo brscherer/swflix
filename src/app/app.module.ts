@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ContentComponent } from './content/content.component';
 import { DataService } from './data.service';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
-      ContentComponent
+      ContentComponent,
+      DetailComponent
    ],
    imports: [
       BrowserModule,
@@ -23,7 +25,7 @@ import { DataService } from './data.service';
       FontAwesomeModule
    ],
    providers: [
-     DataService
+      DataService
    ],
    bootstrap: [
       AppComponent
