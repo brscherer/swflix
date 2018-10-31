@@ -8,3 +8,4 @@ cd swflix/
 npm install
 npm start
 ```
+Access http://localhost:8080 on your browser =)
