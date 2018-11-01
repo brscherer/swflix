@@ -19,4 +19,9 @@ export class ContentComponent {
     this.service.isEmpty$().subscribe(isEmpty => this.isEmpty = isEmpty);
   }
 
+  getFilmId(url: string): string {
+    const arrayUrl = url.split("/");
+    return arrayUrl[ arrayUrl.length - 2 ];
+  }
+
 }

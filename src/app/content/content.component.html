@@ -2,7 +2,7 @@
   <div class="container">
     <h2 *ngIf="!isEmpty && searchQuery">Showing results for "{{ searchQuery }}"</h2>
     <ul class="film-list center">
-      <li class="film p-16" *ngFor="let film of film$ | async" routerLink="/detail/{{ film.episode_id }}">
+      <li class="film p-16" *ngFor="let film of film$ | async" routerLink="/detail/{{ getFilmId(film.url) }}">
         <img src="../../assets/images/{{ film.episode_id }}.jpg" alt="{{ film.title }}">
         <h1 class="info info--title">{{ film.title }}</h1>
         <h3 class="info info--date">{{ film.release_date | date }}</h3>
