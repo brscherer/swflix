@@ -1,0 +1,43 @@
+<section class="section detail">
+  <div *ngIf="film" class="container detail">
+    <div class="columns">
+      <div class="column is-4">
+        <img src="../../assets/images/{{ film.episode_id }}.jpg" alt="{{ film.title }}">
+      </div>
+      <div class="column">
+        <div class="px-16">
+          <h1 class="info info--title has-text-weight-bold">{{ film.title }}</h1>
+          <h3 class="info has-text-weight-semibold">{{ film.release_date | date }}</h3>
+          <p>
+            <span class="info has-text-weight-semibold">
+              Directors:
+            </span>
+            <span class="info info--gray">
+              {{ film.director }}
+            </span>
+          </p>
+          <p>
+            <span class="info has-text-weight-semibold">
+              Producers:
+            </span>
+            <span class="info info--gray">
+              {{ film.producer }}
+            </span>
+          </p>
+          <p>
+            <span class="info has-text-weight-semibold">
+              Opening Crawl:
+            </span>
+            <span class="info info--gray">
+              {{ film.opening_crawl }}
+            </span>
+          </p>
+          <button class="button btn-back my-16 has-text-weight-bold" (click)="goBack()">
+            <fa-icon class="icon" [icon]="faArrowLeft"></fa-icon>
+            <span class="btn-text"> Back</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

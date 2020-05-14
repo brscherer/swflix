@@ -1,0 +1,48 @@
+@import '../../assets/scss/main.scss';
+
+.content {
+  background-color: color($color, 'black');
+
+  .film-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .film {
+      max-width: 400px;
+
+      &:hover {
+        background-color: color($color, 'dark-gray');
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform .25s;
+      }
+
+      .info {
+        color: color($color, 'main');
+        font-size: 16px;
+        margin: 5px 0;
+
+        &--title {
+          font-size: 24px;
+        }
+
+        &--gray {
+          color: color($color, 'gray');
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .film-list {
+    column-count: 3;
+
+    .film {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+}

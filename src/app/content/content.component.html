@@ -1,0 +1,17 @@
+<section class="section content">
+  <div class="container">
+    <h2 *ngIf="!isEmpty && searchQuery">Showing results for "{{ searchQuery }}"</h2>
+    <ul class="film-list center">
+      <li class="film p-16" *ngFor="let film of film$ | async" routerLink="/detail/{{ getFilmId(film.url) }}">
+        <img src="../../assets/images/{{ film.episode_id }}.jpg" alt="{{ film.title }}">
+        <h1 class="info info--title">{{ film.title }}</h1>
+        <h3 class="info info--date">{{ film.release_date | date }}</h3>
+        <p>{{ film.opening_crawl.substring(0, 100) }}... <br><span class="info">(Read more)</span></p>
+      </li>
+    </ul>
+    <div class="center-column" *ngIf="isEmpty && searchQuery != ''">
+      <h2>Sorry, we can't find any results for "{{ searchQuery }}"</h2>
+      <img src="../../assets/images/porg.png" alt="Porg">
+    </div>
+  </div>
+</section>

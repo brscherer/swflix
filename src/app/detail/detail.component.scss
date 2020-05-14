@@ -1,0 +1,53 @@
+@import '../../assets/scss/main.scss';
+
+.detail {
+  background-color: color($color, 'black');
+
+  img {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .info {
+    color: color($color, 'main');
+    font-size: 16px;
+    margin: 5px 0;
+
+    &--title {
+      font-size: 24px;
+    }
+
+    &--gray {
+      color: color($color, 'gray');
+    }
+
+    &--link {
+      cursor: pointer;
+      margin: 10px;
+
+      &:hover {
+        color: color($color, 'main-darker');
+      }
+    }
+  }
+
+  .btn-back {
+    background-color: color($color, 'main');
+    border-color: color($color, 'main');
+
+    &:hover {
+      background-color: color($color, 'main-darker');
+      border-color: color($color, 'main-darker');
+    }
+
+    .icon {
+      color: color($color, 'white');
+    }
+
+    .btn-text {
+      color: color($color, 'white');
+      padding-left: 5px;
+    }
+  }
+
+}
